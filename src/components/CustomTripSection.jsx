@@ -19,10 +19,11 @@ export default function CustomTripSection() {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    // Prototype: no submission. Hand the idea straight to WhatsApp instead.
+    // The form is intentionally inert: nothing is stored or submitted.
+    // The idea is handed straight to WhatsApp instead.
     const message = value
       ? `I'm thinking about: ${value}`
-      : 'I have a trip in mind — can we talk it through?'
+      : 'I have a trip in mind. Can we talk it through?'
     window.open(
       whatsappLink(t.contact.generalPhoneRaw, message),
       '_blank',
@@ -66,12 +67,12 @@ export default function CustomTripSection() {
                   placeholder={c.inputPlaceholder}
                 />
                 <button
-                  className="custom__submit dir-glyph"
+                  className="custom__submit"
                   type="submit"
                   aria-label={c.cta}
                   title={c.cta}
                 >
-                  →
+                  {c.submit}
                 </button>
               </label>
               <p className="custom__note">{c.note}</p>

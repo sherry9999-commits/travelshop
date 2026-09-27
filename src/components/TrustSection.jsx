@@ -45,13 +45,11 @@ export default function TrustSection() {
                   label={frame.image}
                   ratio="3 / 4"
                   focus={FRAME_FOCUS[i]}
-                  index={frame.index}
                   image={FRAME_IMAGES[i]}
                   motionInner
                 />
               </div>
               <div className="trust__cap">
-                <span className="trust__cap-idx num">{frame.index}</span>
                 <span className="trust__cap-label">{frame.label}</span>
                 <span className="trust__cap-note">{frame.note}</span>
               </div>

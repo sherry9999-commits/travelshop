@@ -199,14 +199,6 @@
 html[dir='rtl'] .link-arrow::after {
   transform-origin: right center;
 }
-.link-arrow__arrow {
-  display: inline-block;
-  transition: transform var(--dur) var(--ease-out);
-}
-.link-arrow:hover .link-arrow__arrow {
-  transform: translateX(0.3em);
-}
-
 /* directional glyph: flips automatically in RTL */
 .dir-glyph {
   display: inline-block;

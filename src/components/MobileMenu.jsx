@@ -42,10 +42,9 @@ export default function MobileMenu({ open, onClose }) {
     >
       <div className="container menu__inner">
         <nav className="menu__list" aria-label={t.nav.menu}>
-          {links.map((link, i) => (
+          {links.map((link) => (
             <div className="menu__item" key={link.href}>
               <a className="menu__link" href={link.href} onClick={onClose}>
-                <span className="num">{String(i + 1).padStart(2, '0')}</span>
                 {link.label}
               </a>
             </div>
@@ -62,15 +61,12 @@ export default function MobileMenu({ open, onClose }) {
             className="btn"
             href={whatsappLink(
               t.contact.generalPhoneRaw,
-              'Hello Travelshop — I would like to plan a trip.'
+              'Hello Travelshop, I would like to plan a trip.'
             )}
             target="_blank"
             rel="noreferrer"
           >
             {t.nav.whatsapp}
-            <span className="btn__arrow" aria-hidden="true">
-              →
-            </span>
           </a>
 
           <div className="menu__contact">

@@ -36,7 +36,6 @@ export default function TripFeature({ trip, flip = false, label }) {
           ratio="4 / 3"
           focus="50% 45%"
           focusSm="50% 45%"
-          index={trip.index}
           note={label}
           image={TRIP_IMAGES[trip.id]}
           motionInner
@@ -45,10 +44,7 @@ export default function TripFeature({ trip, flip = false, label }) {
 
       <div className="trip__body">
         <div className="trip__head">
-          <div className="trip__kicker">
-            <span className="trip__index num">{trip.index}</span>
-            <span className="t-meta">{label}</span>
-          </div>
+          <p className="t-meta">{label}</p>
           <h3 className="t-display trip__name">{trip.name}</h3>
           <RouteLine stopKeys={trip.route} />
         </div>
@@ -74,14 +70,11 @@ export default function TripFeature({ trip, flip = false, label }) {
           </p>
           <a
             className="link-arrow"
-            href={whatsappLink(t.contact.generalPhoneRaw, `${trip.name} — I would like to know more.`)}
+            href={whatsappLink(t.contact.generalPhoneRaw, `${trip.name}: I would like to know more.`)}
             target="_blank"
             rel="noreferrer"
           >
             {trip.cta}
-            <span className="link-arrow__arrow dir-glyph" aria-hidden="true">
-              →
-            </span>
           </a>
         </div>
       </div>

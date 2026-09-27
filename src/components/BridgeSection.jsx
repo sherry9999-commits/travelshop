@@ -45,7 +45,6 @@ export default function BridgeSection() {
               ratio="16 / 9"
               ratioSm="3 / 2"
               focus="50% 50%"
-              index="—"
               image={IMAGES.bridge}
               motionInner
             />

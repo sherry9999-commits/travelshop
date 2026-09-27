@@ -42,27 +42,23 @@ export default function JordanTrips() {
             <p className="board__note">{j.boardNote}</p>
           </div>
           <ul className="board__list">
-            {j.board.map((item, i) => (
-              <li key={i}>
+            {j.board.map((item) => (
+              <li key={item.name}>
                 <a
                   className="board__row"
                   href={whatsappLink(
                     t.contact.generalPhoneRaw,
-                    `${item.name} — is this available?`
+                    `${item.name}: is this available?`
                   )}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span className="board__index num">{String(i + 1).padStart(2, '0')}</span>
                   <span className="board__name">{item.name}</span>
                   <span className="board__route">
                     <RouteLine stopKeys={item.route} size="sm" />
                   </span>
                   <span className="board__dur">{item.duration}</span>
                   <span className="board__price num">{item.price}</span>
-                  <span className="board__arrow dir-glyph" aria-hidden="true">
-                    →
-                  </span>
                 </a>
               </li>
             ))}

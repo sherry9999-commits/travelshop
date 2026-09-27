@@ -86,7 +86,6 @@ export default function Hero() {
           <div className="hero__paths">
             {t.hero.paths.map((path) => (
               <a className="path hero-el" href={path.href} key={path.href}>
-                <span className="path__index num">{path.index}</span>
                 <span className="path__body">
                   <span className="path__title">{path.title}</span>
                   <span className="path__note">{path.note}</span>

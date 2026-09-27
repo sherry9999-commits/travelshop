@@ -4,6 +4,7 @@ import { useHeaderState } from '../hooks/useHeaderState.js'
 import { whatsappLink } from '../lib/links.js'
 import LanguageSwitcher from './LanguageSwitcher.jsx'
 import MobileMenu from './MobileMenu.jsx'
+import Wordmark from './Wordmark.jsx'
 
 export default function Header() {
   const { dictionary: t } = useI18n()
@@ -21,9 +22,8 @@ export default function Header() {
     <>
       <header className={`header ${scrolled ? 'is-scrolled' : ''}`.trim()}>
         <div className="container header__bar">
-          <a className="brand" href="#top" aria-label="Travelshop — home">
-            <span className="brand__mark" aria-hidden="true" />
-            Travelshop
+          <a className="brand" href="#top" aria-label="Travelshop home">
+            <Wordmark />
           </a>
 
           <nav className="header__nav" aria-label="Primary">
@@ -37,15 +37,24 @@ export default function Header() {
           <div className="header__actions">
             <LanguageSwitcher />
             <a
+              className="header__wa"
+              href={whatsappLink(
+                t.contact.generalPhoneRaw,
+                'Hello Travelshop, I would like to plan a trip.'
+              )}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="header__wa-dot" aria-hidden="true" />
+              {t.nav.whatsappShort}
+            </a>
+            <a
               className="btn btn--sm header__cta"
-              href={whatsappLink(t.contact.generalPhoneRaw, 'Hello Travelshop — I would like to plan a trip.')}
+              href={whatsappLink(t.contact.generalPhoneRaw, 'Hello Travelshop, I would like to plan a trip.')}
               target="_blank"
               rel="noreferrer"
             >
               {t.nav.whatsapp}
-              <span className="btn__arrow" aria-hidden="true">
-                →
-              </span>
             </a>
             <button
               type="button"

@@ -4,12 +4,10 @@
  * ---------------------------------------------------------------------------
  * IMPORTANT: this section renders VERIFIED CUSTOMER REVIEWS ONLY.
  *
- * The prototype shipped with invented testimonials — fabricated names and
- * quotes — purely to prove the composition. Those have been deleted from the
- * dictionaries and the section is no longer mounted. A "sample content" label
- * on top of fabricated quotes would not have made them honest, and presenting
- * invented testimonials as genuine is not acceptable in a customer-facing
- * experience.
+ * It is deliberately not mounted, because no verified reviews exist yet.
+ * Presenting invented testimonials as genuine is not acceptable in a
+ * customer-facing experience, and a "sample content" label over fabricated
+ * quotes would not have made them honest.
  *
  * The composition itself is preserved here, unchanged, so real reviews drop
  * straight in with no design work. Expected shape:

@@ -1,5 +1,6 @@
 import { useI18n, LANGUAGES } from '../i18n/I18nContext.jsx'
-import { whatsappLink } from '../lib/links.js'
+import { whatsappLink, SOCIAL } from '../lib/links.js'
+import Wordmark from './Wordmark.jsx'
 
 /**
  * FOOTER / operational contact.
@@ -22,8 +23,7 @@ export default function Footer() {
         <div className="grid footer__top">
           <div className="footer__brand">
             <a className="footer__wordmark" href="#top">
-              <span className="brand__mark" aria-hidden="true" />
-              Travelshop
+              <Wordmark />
             </a>
             <p className="footer__tagline">{f.tagline}</p>
             <p className="footer__brandnote">{f.brandNote}</p>
@@ -83,16 +83,19 @@ export default function Footer() {
               className="link-arrow"
               href={whatsappLink(
                 t.contact.generalPhoneRaw,
-                'Hello Travelshop — I would like to plan a trip.'
+                'Hello Travelshop, I would like to plan a trip.'
               )}
               target="_blank"
               rel="noreferrer"
             >
               {f.whatsapp}
-              <span className="link-arrow__arrow dir-glyph" aria-hidden="true">
-                →
-              </span>
             </a>
+            <div className="footer__contact-row">
+              <span className="footer__contact-label">{f.follow}</span>
+              <a href={SOCIAL.facebook} target="_blank" rel="noreferrer">
+                Facebook
+              </a>
+            </div>
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 /* =========================================================================
-   EN — authoritative copy for the prototype
+   EN: authoritative English copy
    ========================================================================= */
 
 const en = {
@@ -7,7 +7,7 @@ const en = {
   label: 'EN',
   dir: 'ltr',
   htmlLang: 'en',
-  pageTitle: 'Travelshop — Point anywhere',
+  pageTitle: 'Travelshop: Point anywhere',
 
   nav: {
     jordan: 'Jordan Trips',
@@ -15,6 +15,7 @@ const en = {
     custom: 'Custom Trip',
     contact: 'Contact',
     whatsapp: 'Start on WhatsApp',
+    whatsappShort: 'WhatsApp',
     menu: 'Menu',
     close: 'Close',
     skip: 'Skip to content',
@@ -25,24 +26,22 @@ const en = {
     eyebrow: 'Jordan · International · Custom',
     titleLines: ['Point anywhere.', "We'll take you there."],
     support:
-      "For travelers coming into Jordan, and those already here heading out — ready-made or built around exactly what you want. Either way, we run the trip. We don't just arrange it.",
+      "For travelers coming into Jordan, and those already here heading out. Ready-made, or built around exactly what you want. Either way, we run the trip. We don't just arrange it.",
     paths: [
       {
-        index: '01',
         title: 'Trips to Jordan',
         note: 'Arriving into Amman. Routes across the country.',
         cta: 'See Jordan trips',
         href: '#jordan',
       },
       {
-        index: '02',
         title: 'Trips abroad',
         note: 'Departing from Jordan. Arranged end to end.',
         cta: 'See international trips',
         href: '#international',
       },
     ],
-    image: 'Hero image — cinematic campaign frame',
+    image: 'Hero image: cinematic campaign frame',
     scroll: 'Scroll',
     location: 'Amman · Jordan',
   },
@@ -52,7 +51,7 @@ const en = {
     titleLines: ['You already have a version of this trip in your head.'],
     support:
       "Not the flights. Not the hotel. Just the trip itself. That's enough for us to start.",
-    image: 'Detail image — arrival moment',
+    image: 'Detail image: arrival moment',
     caption: 'A trip begins as an idea, not a booking',
   },
 
@@ -84,11 +83,10 @@ const en = {
     trips: [
       {
         id: 'jr-1',
-        index: '01',
         name: 'Petra & Wadi Rum',
         route: ['amman', 'petra', 'wadiRum'],
         duration: '4 days / 3 nights',
-        departure: 'Amman — QAIA or city',
+        departure: 'Amman, QAIA or city',
         arrival: 'Amman',
         accommodation: '4★ hotel + Bedouin camp',
         meals: 'Breakfast daily · 2 dinners',
@@ -99,34 +97,32 @@ const en = {
         inclusions: ['Transfers', 'Entrance fees', 'Camp night'],
         price: '680 USD',
         cta: 'Ask about this trip',
-        image: 'Jordan trip image — Petra & Wadi Rum',
+        image: 'Jordan trip image: Petra & Wadi Rum',
       },
       {
         id: 'jr-2',
-        index: '02',
         name: 'Jordan in Depth',
         route: ['amman', 'jerash', 'petra', 'wadiRum', 'aqaba', 'deadSea'],
         duration: '7 days / 6 nights',
-        departure: 'Amman — QAIA',
+        departure: 'Amman, QAIA',
         arrival: 'Amman',
         accommodation: '4★ hotels throughout',
         meals: 'Breakfast daily · 3 dinners',
         transport: 'Private car + driver',
         guide: 'Guided at major sites',
         format: 'Private',
-        window: 'Sep – May',
+        window: 'September to May',
         inclusions: ['Transfers', 'Entrance fees', 'Dead Sea access'],
         price: '1,240 USD',
         cta: 'Ask about this trip',
-        image: 'Jordan trip image — Jordan in Depth',
+        image: 'Jordan trip image: Jordan in Depth',
       },
       {
         id: 'jr-3',
-        index: '03',
         name: 'Aqaba & the Red Sea',
         route: ['amman', 'aqaba'],
         duration: '3 days / 2 nights',
-        departure: 'Amman — city or QAIA',
+        departure: 'Amman, city or QAIA',
         arrival: 'Aqaba',
         accommodation: '5★ resort, sea view',
         meals: 'Half board',
@@ -137,7 +133,7 @@ const en = {
         inclusions: ['Transfers', 'Resort stay', 'Snorkel session'],
         price: '520 USD',
         cta: 'Ask about this trip',
-        image: 'Jordan trip image — Aqaba & the Red Sea',
+        image: 'Jordan trip image: Aqaba & the Red Sea',
       },
     ],
     boardTitle: 'More trips to consider',
@@ -176,18 +172,18 @@ const en = {
       country: 'Türkiye',
       route: ['amman', 'kayseri', 'cappadocia'],
       duration: '5 days / 4 nights',
-      flight: 'Amman — QAIA',
+      flight: 'Amman, QAIA',
       hotel: '4★ cave hotel',
       meals: 'Breakfast daily',
       transfers: 'Private transfers',
       format: 'Small group',
-      window: 'Apr – Jun · Sep – Nov',
+      window: 'April to June · September to November',
       price: '890 USD',
       blurb:
-        'Cave hotels carved into the rock, sunrise over the valleys, and a route that moves at the pace you want. We take care of the flight, the transfers and the stay — you get the landscape.',
+        'Cave hotels carved into the rock, sunrise over the valleys, and a route that moves at the pace you want. We take care of the flight, the transfers and the stay. You get the landscape.',
       tags: ['4★ hotel', 'Breakfast', 'Private transfers'],
       cta: 'Ask about this departure',
-      image: 'International feature image — Cappadocia',
+      image: 'International feature image: Cappadocia',
     },
     listTitle: 'More departures from Amman',
     listNote: 'Trips and destinations change with availability.',
@@ -199,7 +195,7 @@ const en = {
         duration: '4 days',
         tags: ['4★ hotel', 'Guided'],
         price: 'From 420 USD',
-        image: 'Destination image — Cairo',
+        image: 'Destination image: Cairo',
       },
       {
         name: 'Sharm El Sheikh',
@@ -208,7 +204,7 @@ const en = {
         duration: '5 days',
         tags: ['Half board', 'Sea view'],
         price: 'From 560 USD',
-        image: 'Destination image — Sharm El Sheikh',
+        image: 'Destination image: Sharm El Sheikh',
       },
       {
         name: 'Dubai',
@@ -217,7 +213,7 @@ const en = {
         duration: '4 days',
         tags: ['5★ hotel', 'Breakfast'],
         price: 'From 640 USD',
-        image: 'Destination image — Dubai',
+        image: 'Destination image: Dubai',
       },
       {
         name: 'Antalya',
@@ -226,7 +222,7 @@ const en = {
         duration: '6 days',
         tags: ['Seasonal', '4★ hotel', 'All-inclusive'],
         price: 'From 520 USD',
-        image: 'Destination image — Antalya',
+        image: 'Destination image: Antalya',
       },
       {
         name: 'Tbilisi',
@@ -235,7 +231,7 @@ const en = {
         duration: '5 days',
         tags: ['Guided', 'Boutique stay', 'Breakfast'],
         price: 'From 610 USD',
-        image: 'Destination image — Tbilisi',
+        image: 'Destination image: Tbilisi',
       },
       {
         name: 'Baku',
@@ -244,7 +240,7 @@ const en = {
         duration: '5 days',
         tags: ['4★ hotel', 'Guided'],
         price: 'From 590 USD',
-        image: 'Destination image — Baku',
+        image: 'Destination image: Baku',
       },
     ],
   },
@@ -258,7 +254,8 @@ const en = {
     inputPlaceholder: 'A country, a city, an idea…',
     cta: 'Start with what you have',
     note: 'Use WhatsApp to start planning your trip.',
-    image: 'Custom trip image — campaign frame',
+    submit: 'Start',
+    image: 'Custom trip image: campaign frame',
     caption: 'Built around the trip in your head',
   },
 
@@ -271,22 +268,19 @@ const en = {
     ],
     frames: [
       {
-        index: '01',
         label: 'The first hello',
         note: 'Before you fly',
-        image: 'Presence image — the first hello',
+        image: 'Presence image: the first hello',
       },
       {
-        index: '02',
         label: 'Everything in between',
         note: 'On the ground',
-        image: 'Presence image — on the ground',
+        image: 'Presence image: on the ground',
       },
       {
-        index: '03',
         label: 'The last goodbye',
         note: 'Departure',
-        image: 'Presence image — the last goodbye',
+        image: 'Presence image: the last goodbye',
       },
     ],
     foot: [
@@ -301,7 +295,7 @@ const en = {
     titleLines: ['Where do you want to go?'],
     cta: 'Start on WhatsApp',
     note: 'Replies on WhatsApp · Amman time',
-    image: 'Final CTA image — campaign frame',
+    image: 'Final CTA image: campaign frame',
   },
 
   footer: {
@@ -315,6 +309,7 @@ const en = {
     russian: 'Russian market',
     email: 'Email',
     whatsapp: 'WhatsApp',
+    follow: 'Follow',
     rights: '© 2026 Travelshop · Amman, Jordan',
   },
 

@@ -46,7 +46,7 @@ export default function FinalCTA() {
               className="btn btn--lg"
               href={whatsappLink(
                 t.contact.generalPhoneRaw,
-                'Hello Travelshop — I would like to plan a trip.'
+                'Hello Travelshop, I would like to plan a trip.'
               )}
               target="_blank"
               rel="noreferrer"

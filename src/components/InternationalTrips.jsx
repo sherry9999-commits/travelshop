@@ -53,7 +53,6 @@ export default function InternationalTrips() {
               ratioSm="4 / 5"
               focus="50% 56%"
               focusSm="50% 50%"
-              index={i18.index}
               overlay
               image={IMAGES.cappadocia}
               motionInner
@@ -91,7 +90,7 @@ export default function InternationalTrips() {
                 className="btn"
                 href={whatsappLink(
                   t.contact.generalPhoneRaw,
-                  `${feature.name} — I would like to know more about this departure.`
+                  `${feature.name}: I would like to know more about this departure.`
                 )}
                 target="_blank"
                 rel="noreferrer"
@@ -118,7 +117,7 @@ export default function InternationalTrips() {
                   className="dest-row"
                   href={whatsappLink(
                     t.contact.generalPhoneRaw,
-                    `${item.name} — what trips do you have from Amman?`
+                    `${item.name}: what trips do you have from Amman?`
                   )}
                   target="_blank"
                   rel="noreferrer"
@@ -151,10 +150,6 @@ export default function InternationalTrips() {
                   </span>
 
                   <span className="dest-row__price num">{item.price}</span>
-
-                  <span className="dest-row__arrow dir-glyph" aria-hidden="true">
-                    →
-                  </span>
                 </a>
               </li>
             ))}
