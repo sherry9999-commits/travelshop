@@ -92,9 +92,30 @@ export default function Footer() {
             </a>
             <div className="footer__contact-row">
               <span className="footer__contact-label">{f.follow}</span>
-              <a href={SOCIAL.facebook} target="_blank" rel="noreferrer">
-                Facebook
-              </a>
+              <div className="footer__social">
+                <a
+                  className="footer__social-link"
+                  href={SOCIAL.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {f.social.facebook}
+                </a>
+                <a
+                  className="footer__social-link"
+                  href={SOCIAL.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {f.social.instagram}
+                </a>
+                <span className="footer__social-static">
+                  <span>{f.social.snapchat}</span>
+                  <span className="footer__social-value" dir="ltr">
+                    {t.contact.generalPhone}
+                  </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>

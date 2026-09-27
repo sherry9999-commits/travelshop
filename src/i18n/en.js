@@ -310,6 +310,11 @@ const en = {
     email: 'Email',
     whatsapp: 'WhatsApp',
     follow: 'Follow',
+    social: {
+      facebook: 'Facebook',
+      instagram: 'Instagram',
+      snapchat: 'Snapchat',
+    },
     rights: '© 2026 Travelshop · Amman, Jordan',
   },
 

@@ -225,6 +225,11 @@ const ar = {
     email: 'البريد الإلكتروني',
     whatsapp: 'واتساب',
     follow: 'تابعنا',
+    social: {
+      facebook: 'فيسبوك',
+      instagram: 'إنستغرام',
+      snapchat: 'سناب شات',
+    },
     rights: '© 2026 ترافلشوب · عمّان، الأردن',
   },
 

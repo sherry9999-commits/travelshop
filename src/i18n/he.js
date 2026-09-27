@@ -223,6 +223,11 @@ const he = {
     email: 'דוא״ל',
     whatsapp: 'וואטסאפ',
     follow: 'עקבו אחרינו',
+    social: {
+      facebook: 'פייסבוק',
+      instagram: 'אינסטגרם',
+      snapchat: 'סנאפצ׳אט',
+    },
     rights: '© 2026 Travelshop · עמאן, ירדן',
   },
 

@@ -231,6 +231,11 @@ const ru = {
     email: 'Эл. почта',
     whatsapp: 'WhatsApp',
     follow: 'Соцсети',
+    social: {
+      facebook: 'Facebook',
+      instagram: 'Instagram',
+      snapchat: 'Snapchat',
+    },
     rights: '© 2026 Travelshop · Амман, Иордания',
   },
 

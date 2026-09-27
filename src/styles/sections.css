@@ -1695,6 +1695,46 @@ html[dir='rtl'] .path:hover .path__arrow {
   color: var(--text-3);
 }
 
+/* Social channels sit inside the contact column as a plain text list rather
+   than an icon strip, matching the restrained footer language. Snapchat has
+   no confirmed profile, so it is not a link: it shows the main Jordanian
+   number as supporting text instead. */
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer__social-link,
+.footer__social-static {
+  font-family: var(--font-ui);
+  font-size: var(--step-0);
+  line-height: 1.4;
+  color: var(--text-2);
+}
+
+.footer__social-link {
+  width: fit-content;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.footer__social-link:hover {
+  color: var(--text);
+}
+
+.footer__social-static {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.55rem;
+  cursor: default;
+}
+
+.footer__social-value {
+  font-size: var(--step--1);
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
 .footer__langs {
   display: flex;
   flex-wrap: wrap;
