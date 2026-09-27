@@ -47,6 +47,14 @@ const en = {
     customValue: 'I am thinking about: {value}',
   },
 
+  partners: {
+    label: 'Official partner',
+    name: 'AqabaVIP',
+    statement: 'AqabaVIP is an official partner of Travelshop.',
+    focus: 'Focused on Aqaba and the Red Sea.',
+    visit: 'Visit AqabaVIP',
+  },
+
   hero: {
     eyebrow: 'Jordan · International · Custom',
     titleLines: ['Point anywhere.', "We'll take you there."],
@@ -144,6 +152,7 @@ const en = {
       },
       {
         id: 'jr-3',
+        partner: true,
         name: 'Aqaba & the Red Sea',
         route: ['amman', 'aqaba'],
         duration: '3 days / 2 nights',

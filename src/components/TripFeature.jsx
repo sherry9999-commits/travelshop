@@ -1,5 +1,5 @@
 import { useI18n } from '../i18n/I18nContext.jsx'
-import { whatsappLink } from '../lib/links.js'
+import { whatsappLink, PARTNERS } from '../lib/links.js'
 import { fill } from '../lib/text.js'
 import { TRIP_IMAGES } from '../data/images.js'
 import ImagePlaceholder from './ImagePlaceholder.jsx'
@@ -79,6 +79,27 @@ export default function TripFeature({ trip, flip = false, label }) {
             {trip.cta}
           </a>
         </div>
+
+        {trip.partner ? (
+          <div className="trip__partner">
+            <span className="trip__partner-label">{t.partners.label}</span>
+            <span className="trip__partner-name">{t.partners.name}</span>
+            <p className="trip__partner-note">{t.partners.statement}</p>
+            <p className="trip__partner-note trip__partner-focus">
+              {t.partners.focus}
+            </p>
+            {PARTNERS.aqabaVip.url ? (
+              <a
+                className="link-arrow trip__partner-link"
+                href={PARTNERS.aqabaVip.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.partners.visit}
+              </a>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </article>
   )

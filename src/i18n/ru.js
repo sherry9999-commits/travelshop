@@ -47,6 +47,14 @@ const ru = {
     customValue: 'Думаю о: {value}',
   },
 
+  partners: {
+    label: 'Официальный партнёр',
+    name: 'AqabaVIP',
+    statement: 'AqabaVIP является официальным партнёром Travelshop.',
+    focus: 'Специализируется на Акабе и Красном море.',
+    visit: 'Открыть AqabaVIP',
+  },
+
   hero: {
     eyebrow: 'Иордания · Международные · Индивидуальные',
     titleLines: ['Укажите любое место.', 'Мы вас туда отправим.'],
@@ -144,6 +152,7 @@ const ru = {
       },
       {
         id: 'jr-3',
+        partner: true,
         name: 'Акаба и Красное море',
         route: ['amman', 'aqaba'],
         duration: '3 дня / 2 ночи',

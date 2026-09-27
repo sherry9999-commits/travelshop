@@ -39,6 +39,11 @@ export default function Footer() {
               ) : null}
             </p>
             <p className="footer__brandnote">{f.brandNote}</p>
+
+            <div className="footer__partner">
+              <span className="footer__partner-label">{t.partners.label}</span>
+              <p className="footer__partner-note">{t.partners.statement}</p>
+            </div>
           </div>
 
           <nav className="footer__col" aria-label={f.exploreTitle}>

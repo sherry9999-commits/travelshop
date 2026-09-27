@@ -47,6 +47,14 @@ const ar = {
     customValue: 'أفكر في: {value}',
   },
 
+  partners: {
+    label: 'شريك رسمي',
+    name: 'AqabaVIP',
+    statement: 'AqabaVIP شريك رسمي لترافلشوب.',
+    focus: 'متخصّص في العقبة والبحر الأحمر.',
+    visit: 'زيارة AqabaVIP',
+  },
+
   hero: {
     eyebrow: 'الأردن · رحلات دولية · حسب الطلب',
     titleLines: ['وجّهنا إلى أي مكان.', 'وسنأخذك إلى هناك.'],
@@ -143,6 +151,7 @@ const ar = {
       },
       {
         id: 'jr-3',
+        partner: true,
         name: 'العقبة والبحر الأحمر',
         route: ['amman', 'aqaba'],
         duration: '3 أيام / ليلتان',

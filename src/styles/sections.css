@@ -796,6 +796,52 @@ html[dir='rtl'] .path:hover .path__arrow {
   border-block-start: 1px solid var(--line);
 }
 
+/* ---- Partner attribution -------------------------------------------
+   Sits at the end of the trip card, after the price and the enquiry CTA, so
+   it reads as a credibility note without interrupting the information flow
+   or competing with the conversion action. */
+.trip__partner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-block-start: clamp(1rem, 0.7rem + 1vw, 1.5rem);
+  border-block-start: 1px solid var(--line);
+}
+
+.trip__partner-label {
+  font-family: var(--font-ui);
+  font-size: var(--step--3);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.trip__partner-name {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.trip__partner-note {
+  font-family: var(--font-ui);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--text-2);
+  max-width: 40ch;
+}
+
+.trip__partner-focus {
+  color: var(--text-3);
+}
+
+.trip__partner-link {
+  margin-block-start: 0.5rem;
+}
+
 /* image hover behaviour */
 .trip .ph__inner,
 .dest-row .ph__inner,
@@ -1738,6 +1784,34 @@ html[dir='rtl'] .path:hover .path__arrow {
   line-height: 1.6;
   color: var(--text-3);
   max-width: 34ch;
+}
+
+/* Partnership disclosure. Lives in the brand column, where it reads as a
+   brand-level relationship rather than another contact channel, and where
+   there is room for the statement to sit on one or two lines. */
+.footer__partner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-block-start: 1.25rem;
+  border-block-start: 1px solid var(--line);
+  max-width: 34ch;
+}
+
+.footer__partner-label {
+  font-family: var(--font-ui);
+  font-size: var(--step--3);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.footer__partner-note {
+  font-family: var(--font-ui);
+  font-size: var(--step--1);
+  line-height: 1.6;
+  color: var(--text-3);
 }
 
 .footer__col {

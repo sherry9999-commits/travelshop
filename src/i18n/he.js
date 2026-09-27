@@ -47,6 +47,14 @@ const he = {
     customValue: 'אני חושב על: {value}',
   },
 
+  partners: {
+    label: 'שותף רשמי',
+    name: 'AqabaVIP',
+    statement: 'AqabaVIP הוא שותף רשמי של Travelshop.',
+    focus: 'מתמחה בעקבה ובים האדום.',
+    visit: 'לאתר AqabaVIP',
+  },
+
   hero: {
     eyebrow: 'ירדן · בינלאומי · בהתאמה אישית',
     titleLines: ['הצביעו לכל מקום.', 'ואנחנו ניקח אתכם לשם.'],
@@ -140,6 +148,7 @@ const he = {
       },
       {
         id: 'jr-3',
+        partner: true,
         name: 'עקבה והים האדום',
         route: ['amman', 'aqaba'],
         duration: '3 ימים / 2 לילות',
