@@ -1,0 +1,78 @@
+# ---------------------------------------------------------------------------
+# Dependencies
+# ---------------------------------------------------------------------------
+node_modules/
+.pnp
+.pnp.js
+
+# ---------------------------------------------------------------------------
+# Build output
+# ---------------------------------------------------------------------------
+dist/
+dist-ssr/
+build/
+*.tsbuildinfo
+
+# ---------------------------------------------------------------------------
+# Environment / secrets — never commit these
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.npmrc
+.netrc
+credentials.json
+service-account*.json
+*serviceAccount*.json
+secrets.json
+
+# ---------------------------------------------------------------------------
+# Caches / temp / tooling artifacts
+# ---------------------------------------------------------------------------
+.vite/
+.cache/
+.turbo/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+coverage/
+*.tsbuildinfo
+tmp/
+.tmp/
+temp/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------------------------------------------------------------------------
+# One-off sourcing / QA harnesses (prefixed with _)
+# These are throwaway scripts used to source imagery and run browser QA.
+# They are deliberately kept out of the repository.
+# ---------------------------------------------------------------------------
+scripts/_*
+*.local
+
+# ---------------------------------------------------------------------------
+# OS / editor / browser artifacts
+# ---------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.swp
+*.swo
+*~
+.idea/
+.vscode/*
+!.vscode/extensions.json

@@ -1,0 +1,265 @@
+/* =========================================================================
+   BASE — reset, document, typography primitives, accessibility
+   ========================================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  min-height: 100%;
+  font-family: var(--font-ui);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  font-weight: 400;
+  color: #efeae0;
+  background: var(--ink-950);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+::selection {
+  background: var(--ember);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ember-bright);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* ---- Skip link ---- */
+.skip-link {
+  position: fixed;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  z-index: 200;
+  padding: 0.7em 1.1em;
+  background: var(--paper-0);
+  color: #1a1813;
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: translateY(-160%);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================ TYPE PRIMITIVES ============================ */
+
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.012em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.t-lead {
+  font-family: var(--font-ui);
+  font-size: var(--step-1);
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--text-2);
+  max-width: var(--max-lead);
+  text-wrap: pretty;
+}
+
+.t-body {
+  font-family: var(--font-ui);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  color: var(--text-2);
+  max-width: var(--max-lead);
+  text-wrap: pretty;
+}
+
+.t-meta {
+  font-family: var(--font-ui);
+  font-size: var(--step--2);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.t-label {
+  font-family: var(--font-ui);
+  font-size: var(--step--2);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  font-family: var(--font-ui);
+  font-size: var(--step--2);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.eyebrow__dot {
+  inline-size: 0.42em;
+  block-size: 0.42em;
+  background: var(--accent);
+  border-radius: 50%;
+  flex: none;
+}
+
+/* numerals stay legible in RTL contexts */
+.num {
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums;
+  unicode-bidi: isolate;
+  letter-spacing: 0.04em;
+}
+
+/* ============================ HEADLINE LINES ============================ */
+/* .line wrapper enables masked, per-line reveals with a stable final state */
+
+.lines {
+  display: block;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  padding-block: 0.09em;
+  margin-block: -0.09em;
+}
+
+/* No blanket will-change here: promoting every headline line to its own
+   compositor layer is costly on mobile. GSAP composites the transform anyway. */
+.line__inner {
+  display: block;
+}
+
+/* ============================ MOTION INITIAL STATES ============================ */
+/* Applied only when JS motion is enabled (html.has-motion), so the page
+   is fully visible with motion off, in reduced-motion, or without JS. */
+
+html.has-motion [data-anim='fade'] {
+  opacity: 0;
+}
+html.has-motion [data-anim='up'] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+html.has-motion [data-anim='image'] {
+  clip-path: inset(0% 0% 100% 0%);
+}
+html.has-motion [data-anim='lines'] .line__inner {
+  transform: translateY(118%);
+}
+html.has-motion [data-anim='rule'] {
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+html.has-motion[dir='rtl'] [data-anim='rule'] {
+  transform-origin: right center;
+}
+
+/* hero-specific entrance states */
+html.has-motion .hero-media__ph {
+  clip-path: inset(0% 0% 100% 0%);
+}
+html.has-motion .hero-media__inner {
+  transform: scale(1.14);
+}
+html.has-motion .hero-el {
+  opacity: 0;
+  transform: translateY(22px);
+}
+html.has-motion .hero__title .line__inner {
+  transform: translateY(118%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-anim],
+  .hero-el,
+  .line__inner,
+  .hero-media__ph,
+  .hero-media__inner {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}

@@ -1,0 +1,217 @@
+/* =========================================================================
+   TOKENS — Cinematic Travel Campaign
+   One continuous tonal world: deep warm ink  <->  warm paper.
+   Accent: "ember" (a restrained clay/signal tone). Secondary: "steel".
+   ========================================================================= */
+
+:root {
+  /* ---- Foundation: deep warm ink ---- */
+  --ink-950: #090908;
+  --ink-900: #0d0d0b;
+  --ink-850: #121210;
+  --ink-800: #171714;
+  --ink-700: #201e1a;
+  --ink-600: #2c2a24;
+
+  /* ---- Foundation: warm stone / sand / paper ---- */
+  --stone-700: #3a372f;
+  --stone-600: #545047;
+  --stone-500: #6e6a5f;
+  --stone-400: #918b7e;
+  --sand-300: #b4ac9c;
+  --sand-200: #cfc7b7;
+  --bone-200: #ded7c8;
+  --bone-100: #e9e3d6;
+  --paper-50: #f2eee4;
+  --paper-0: #f8f5ee;
+
+  /* ---- Accents ---- */
+  --ember: #b14e27;
+  --ember-bright: #e08a5c;
+  --steel: #6d7b82;
+
+  /* ---- Type families ------------------------------------------------
+     Display: Unbounded — a geometric display grotesk drawn Cyrillic-first,
+     so English and Russian headlines are the same design rather than a
+     fallback. Wide, architectural, strong silhouettes at restrained sizes.
+     Script companions are deliberate, not emergency fallbacks:
+       Arabic   Alexandria   — contemporary, warm, neutral pan-Arab MSA
+       Hebrew   Rubik        — geometric, modern, same temperament as Latin
+     UI/metadata stays quieter: Archivo for Latin, with Onest as its
+     Cyrillic companion so Russian metadata is a designed pairing.        */
+  --font-arabic: "Alexandria", "Noto Sans Arabic";
+  --font-hebrew: "Rubik", "Noto Sans Hebrew";
+  /* NOTE: the script variables above carry NO generic family. A generic inside
+     a variable terminates the composed stack, so anything after it is never
+     reached — which silently dropped Hebrew to the platform sans. The single
+     generic belongs at the end of each composed stack, as below. */
+  --font-display: "Unbounded", var(--font-arabic), var(--font-hebrew), system-ui,
+    sans-serif;
+  --font-ui: "Archivo", "Onest", var(--font-arabic), var(--font-hebrew),
+    system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* ---- Fluid type scale ---- */
+  --step--3: clamp(0.62rem, 0.6rem + 0.1vw, 0.68rem);
+  --step--2: clamp(0.7rem, 0.68rem + 0.12vw, 0.78rem);
+  --step--1: clamp(0.8rem, 0.77rem + 0.18vw, 0.88rem);
+  --step-0: clamp(0.95rem, 0.91rem + 0.22vw, 1.06rem);
+  --step-1: clamp(1.08rem, 1rem + 0.5vw, 1.34rem);
+  --step-2: clamp(1.3rem, 1.14rem + 0.85vw, 1.78rem);
+  --step-3: clamp(1.5rem, 1.28rem + 1.25vw, 2.2rem);
+  --step-4: clamp(1.8rem, 1.42rem + 1.9vw, 2.65rem);
+  --step-5: clamp(2.15rem, 1.45rem + 3.1vw, 3.7rem);
+
+  /* ---- Space / layout ---- */
+  --gutter: clamp(1.15rem, 0.5rem + 2.6vw, 4rem);
+  --container: 1440px;
+  --col-gap: clamp(1rem, 0.4rem + 1.5vw, 2rem);
+  --section-y: clamp(4.25rem, 2.8rem + 7vw, 8.5rem);
+  --section-y-tight: clamp(3.25rem, 2.2rem + 4.5vw, 5.5rem);
+
+  --max-lead: 46ch;
+  --header-h: 4.5rem;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.24s;
+  --dur: 0.5s;
+  --dur-slow: 0.9s;
+
+  /* ---- Default tone (ink). Sections override via .tone-* ---- */
+  --bg: var(--ink-900);
+  --text: #efeae0;
+  --text-2: rgba(239, 234, 224, 0.66);
+  --text-3: rgba(239, 234, 224, 0.42);
+  --line: rgba(239, 234, 224, 0.15);
+  --line-2: rgba(239, 234, 224, 0.28);
+  --accent: var(--ember-bright);
+  --ph-bg: rgba(239, 234, 224, 0.045);
+  --ph-bg-2: rgba(239, 234, 224, 0.085);
+  --ph-line: rgba(239, 234, 224, 0.22);
+  --ph-text: rgba(239, 234, 224, 0.6);
+  --btn-bg: #efeae0;
+  --btn-fg: #0d0d0b;
+  --btn-hover-bg: #ffffff;
+}
+
+/* =============================== TONES =============================== */
+
+.tone-ink {
+  --bg: var(--ink-900);
+  --text: #efeae0;
+  --text-2: rgba(239, 234, 224, 0.66);
+  --text-3: rgba(239, 234, 224, 0.42);
+  --line: rgba(239, 234, 224, 0.15);
+  --line-2: rgba(239, 234, 224, 0.28);
+  --accent: var(--ember-bright);
+  --ph-bg: rgba(239, 234, 224, 0.045);
+  --ph-bg-2: rgba(239, 234, 224, 0.085);
+  --ph-line: rgba(239, 234, 224, 0.22);
+  --ph-text: rgba(239, 234, 224, 0.6);
+  --btn-bg: #efeae0;
+  --btn-fg: #0d0d0b;
+  --btn-hover-bg: #ffffff;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+.tone-ink-deep {
+  --bg: var(--ink-950);
+  --text: #efeae0;
+  --text-2: rgba(239, 234, 224, 0.6);
+  --text-3: rgba(239, 234, 224, 0.38);
+  --line: rgba(239, 234, 224, 0.13);
+  --line-2: rgba(239, 234, 224, 0.24);
+  --accent: var(--ember-bright);
+  --ph-bg: rgba(239, 234, 224, 0.04);
+  --ph-bg-2: rgba(239, 234, 224, 0.075);
+  --ph-line: rgba(239, 234, 224, 0.2);
+  --ph-text: rgba(239, 234, 224, 0.55);
+  --btn-bg: #efeae0;
+  --btn-fg: #0d0d0b;
+  --btn-hover-bg: #ffffff;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+.tone-bone {
+  --bg: var(--paper-50);
+  --text: #1a1813;
+  --text-2: rgba(26, 24, 19, 0.66);
+  --text-3: rgba(26, 24, 19, 0.44);
+  --line: rgba(26, 24, 19, 0.14);
+  --line-2: rgba(26, 24, 19, 0.3);
+  --accent: var(--ember);
+  --ph-bg: rgba(26, 24, 19, 0.05);
+  --ph-bg-2: rgba(26, 24, 19, 0.09);
+  --ph-line: rgba(26, 24, 19, 0.2);
+  --ph-text: rgba(26, 24, 19, 0.55);
+  --btn-bg: #1a1813;
+  --btn-fg: #f2eee4;
+  --btn-hover-bg: #000000;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+.tone-paper {
+  --bg: var(--paper-0);
+  --text: #1a1813;
+  --text-2: rgba(26, 24, 19, 0.64);
+  --text-3: rgba(26, 24, 19, 0.42);
+  --line: rgba(26, 24, 19, 0.13);
+  --line-2: rgba(26, 24, 19, 0.28);
+  --accent: var(--ember);
+  --ph-bg: rgba(26, 24, 19, 0.045);
+  --ph-bg-2: rgba(26, 24, 19, 0.08);
+  --ph-line: rgba(26, 24, 19, 0.18);
+  --ph-text: rgba(26, 24, 19, 0.52);
+  --btn-bg: #1a1813;
+  --btn-fg: #f8f5ee;
+  --btn-hover-bg: #000000;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ==================== MULTILINGUAL TYPE ADJUSTMENTS ==================== */
+
+html[lang='ar'] .t-display {
+  letter-spacing: 0;
+  line-height: 1.3;
+  font-weight: 600;
+}
+html[lang='ar'] .line {
+  padding-block: 0.18em;
+  margin-block: -0.18em;
+}
+html[lang='ar'] .eyebrow,
+html[lang='ar'] .t-meta,
+html[lang='ar'] .nav__link,
+html[lang='ar'] .btn {
+  letter-spacing: 0.01em;
+}
+html[lang='ar'] .t-lead {
+  line-height: 1.8;
+}
+
+html[lang='he'] .t-display {
+  letter-spacing: -0.004em;
+  line-height: 1.16;
+  font-weight: 500;
+}
+html[lang='he'] .t-lead {
+  line-height: 1.7;
+}
+
+html[lang='ru'] .t-display {
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+html[lang='ru'] .eyebrow,
+html[lang='ru'] .t-meta {
+  letter-spacing: 0.16em;
+}
