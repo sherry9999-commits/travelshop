@@ -3,6 +3,7 @@ import { useI18n } from '../i18n/I18nContext.jsx'
 import { useHeaderState } from '../hooks/useHeaderState.js'
 import { whatsappLink } from '../lib/links.js'
 import LanguageSwitcher from './LanguageSwitcher.jsx'
+import LanguageCompact from './LanguageCompact.jsx'
 import MobileMenu from './MobileMenu.jsx'
 import Wordmark from './Wordmark.jsx'
 
@@ -22,7 +23,7 @@ export default function Header() {
     <>
       <header className={`header ${scrolled ? 'is-scrolled' : ''}`.trim()}>
         <div className="container header__bar">
-          <a className="brand" href="#top" aria-label="Travelshop home">
+          <a className="brand" href="#top" aria-label={t.a11y.home}>
             <Wordmark />
           </a>
 
@@ -36,12 +37,10 @@ export default function Header() {
 
           <div className="header__actions">
             <LanguageSwitcher />
+            <LanguageCompact />
             <a
               className="header__wa"
-              href={whatsappLink(
-                t.contact.generalPhoneRaw,
-                'Hello Travelshop, I would like to plan a trip.'
-              )}
+              href={whatsappLink(t.contact.generalPhoneRaw, t.messages.general)}
               target="_blank"
               rel="noreferrer"
             >

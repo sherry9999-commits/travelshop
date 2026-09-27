@@ -22,6 +22,31 @@ const en = {
     language: 'Language',
   },
 
+  a11y: {
+    home: 'Travelshop home',
+  },
+
+  images: {
+    hero: 'An empty road leading through desert mountains at sunset',
+    bridge: 'A misty valley with distant lights, seen through an old stone opening at dawn',
+    feature: 'Eroded rock formations rising above a layer of morning fog',
+    custom: 'A misty valley opening towards distant peaks at dawn, with one small figure on the riverbed',
+    final: 'A low sun over calm water and dark rocks',
+    trust1: 'A person standing in a doorway, looking into the light',
+    trust2: 'A small group walking a ridge line in the desert',
+    trust3: 'A traveller crossing a station platform in low light',
+  },
+
+  messages: {
+    general: 'Hello Travelshop, I would like to plan a trip.',
+    trip: '{name}: I would like to know more.',
+    board: '{name}: is this available?',
+    destination: '{name}: what trips do you have from Amman?',
+    feature: '{name}: I would like to know more about this departure.',
+    customIdea: 'I have a trip in mind. Can we talk it through?',
+    customValue: 'I am thinking about: {value}',
+  },
+
   hero: {
     eyebrow: 'Jordan · International · Custom',
     titleLines: ['Point anywhere.', "We'll take you there."],

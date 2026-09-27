@@ -61,7 +61,7 @@ export default function MobileMenu({ open, onClose }) {
             className="btn"
             href={whatsappLink(
               t.contact.generalPhoneRaw,
-              'Hello Travelshop, I would like to plan a trip.'
+              t.messages.general
             )}
             target="_blank"
             rel="noreferrer"

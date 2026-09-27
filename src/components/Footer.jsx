@@ -11,6 +11,13 @@ export default function Footer() {
   const { dictionary: t, lang, setLang } = useI18n()
   const f = t.footer
 
+  // The tagline's final full stop is set as the same ember point used inside
+  // the wordmark, so the identity reads as a system: the point appears as the
+  // O of SHOP and again at the end of "Point anywhere."
+  const tagline = f.tagline ?? ''
+  const taglineText = tagline.endsWith('.') ? tagline.slice(0, -1) : tagline
+  const taglineHasStop = tagline.endsWith('.')
+
   const links = [
     { href: '#jordan', label: t.nav.jordan },
     { href: '#international', label: t.nav.international },
@@ -25,7 +32,12 @@ export default function Footer() {
             <a className="footer__wordmark" href="#top">
               <Wordmark />
             </a>
-            <p className="footer__tagline">{f.tagline}</p>
+            <p className="footer__tagline">
+              {taglineText}
+              {taglineHasStop ? (
+                <span className="footer__point" aria-hidden="true" />
+              ) : null}
+            </p>
             <p className="footer__brandnote">{f.brandNote}</p>
           </div>
 
@@ -81,10 +93,7 @@ export default function Footer() {
             </div>
             <a
               className="link-arrow"
-              href={whatsappLink(
-                t.contact.generalPhoneRaw,
-                'Hello Travelshop, I would like to plan a trip.'
-              )}
+              href={whatsappLink(t.contact.generalPhoneRaw, t.messages.general)}
               target="_blank"
               rel="noreferrer"
             >

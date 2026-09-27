@@ -1,5 +1,6 @@
 import { useI18n } from '../i18n/I18nContext.jsx'
 import { whatsappLink } from '../lib/links.js'
+import { fill } from '../lib/text.js'
 import SectionIntro from './SectionIntro.jsx'
 import TripFeature from './TripFeature.jsx'
 import RouteLine from './RouteLine.jsx'
@@ -48,7 +49,7 @@ export default function JordanTrips() {
                   className="board__row"
                   href={whatsappLink(
                     t.contact.generalPhoneRaw,
-                    `${item.name}: is this available?`
+                    fill(t.messages.board, { name: item.name })
                   )}
                   target="_blank"
                   rel="noreferrer"

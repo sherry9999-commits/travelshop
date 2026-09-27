@@ -1,5 +1,6 @@
 import { useI18n } from '../i18n/I18nContext.jsx'
 import { whatsappLink } from '../lib/links.js'
+import { fill } from '../lib/text.js'
 import { IMAGES, DESTINATION_IMAGES } from '../data/images.js'
 import SectionIntro from './SectionIntro.jsx'
 import ImagePlaceholder from './ImagePlaceholder.jsx'
@@ -55,6 +56,7 @@ export default function InternationalTrips() {
               focusSm="50% 50%"
               overlay
               image={IMAGES.cappadocia}
+              alt={t.images.feature}
               motionInner
             />
             <div className="dest-feature__scrim" aria-hidden="true" />
@@ -90,7 +92,7 @@ export default function InternationalTrips() {
                 className="btn"
                 href={whatsappLink(
                   t.contact.generalPhoneRaw,
-                  `${feature.name}: I would like to know more about this departure.`
+                  fill(t.messages.feature, { name: feature.name })
                 )}
                 target="_blank"
                 rel="noreferrer"
@@ -117,7 +119,7 @@ export default function InternationalTrips() {
                   className="dest-row"
                   href={whatsappLink(
                     t.contact.generalPhoneRaw,
-                    `${item.name}: what trips do you have from Amman?`
+                    fill(t.messages.destination, { name: item.name })
                   )}
                   target="_blank"
                   rel="noreferrer"
@@ -129,6 +131,7 @@ export default function InternationalTrips() {
                       focus="50% 50%"
                       compact
                       image={DESTINATION_IMAGES[item.route[item.route.length - 1]]}
+                      alt={`${item.name}, ${item.country}`}
                     />
                   </div>
 

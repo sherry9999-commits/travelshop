@@ -46,6 +46,7 @@ export default function BridgeSection() {
               ratioSm="3 / 2"
               focus="50% 50%"
               image={IMAGES.bridge}
+              alt={t.images.bridge}
               motionInner
             />
             <figcaption className="bridge__caption">

@@ -1,5 +1,6 @@
 import { useI18n } from '../i18n/I18nContext.jsx'
 import { whatsappLink } from '../lib/links.js'
+import { fill } from '../lib/text.js'
 import { IMAGES } from '../data/images.js'
 import ImagePlaceholder from './ImagePlaceholder.jsx'
 
@@ -22,6 +23,7 @@ export default function FinalCTA() {
           focus="50% 55%"
           focusSm="50% 50%"
           image={IMAGES.final}
+          alt={t.images.final}
         />
         <div className="final__scrim" />
       </div>
@@ -44,10 +46,7 @@ export default function FinalCTA() {
           <div className="final__actions" data-anim="up">
             <a
               className="btn btn--lg"
-              href={whatsappLink(
-                t.contact.generalPhoneRaw,
-                'Hello Travelshop, I would like to plan a trip.'
-              )}
+              href={whatsappLink(t.contact.generalPhoneRaw, t.messages.general)}
               target="_blank"
               rel="noreferrer"
             >

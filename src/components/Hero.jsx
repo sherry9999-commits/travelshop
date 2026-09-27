@@ -61,7 +61,7 @@ export default function Hero() {
           style={{ '--ph-focus': '50% 48%', '--ph-focus-sm': '50% 50%' }}
         >
           <div className="hero-media__inner">
-            <Picture image={IMAGES.hero} priority />
+            <Picture image={IMAGES.hero} alt={t.images.hero} priority />
           </div>
         </div>
       </div>

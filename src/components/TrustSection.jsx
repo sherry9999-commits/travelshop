@@ -15,6 +15,7 @@ const FRAME_FOCUS = ['50% 38%', '50% 45%', '50% 45%']
 export default function TrustSection() {
   const { dictionary: t } = useI18n()
   const tr = t.trust
+  const FRAME_ALTS = [t.images.trust1, t.images.trust2, t.images.trust3]
 
   return (
     <section className="section tone-bone" aria-labelledby="trust-title">
@@ -46,6 +47,7 @@ export default function TrustSection() {
                   ratio="3 / 4"
                   focus={FRAME_FOCUS[i]}
                   image={FRAME_IMAGES[i]}
+                  alt={FRAME_ALTS[i]}
                   motionInner
                 />
               </div>

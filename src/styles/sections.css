@@ -51,33 +51,30 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  font-size: clamp(0.86rem, 0.78rem + 0.3vw, 1rem);
+  font-size: clamp(0.78rem, 0.72rem + 0.3vw, 1rem);
   padding-inline-end: 0.15em;
   color: #efeae0;
   white-space: nowrap;
 }
 
 /* ---- Wordmark --------------------------------------------------------
-   The mark is locked up with per-letter kerning (see Wordmark.jsx) rather
-   than uniform tracking, so it reads as one unit instead of tracked type.
-   Colour is inherited from currentColor, which is what gives the light
-   variant on ink and the dark variant on paper with no second component. */
+   Locked up with per-letter kerning (see Wordmark.jsx) rather than uniform
+   tracking, so it reads as one unit instead of tracked type.
+
+   `direction: ltr` is not cosmetic: this is a Latin brand name, and without
+   it the flex letter order mirrors in Arabic and Hebrew, rendering the name
+   backwards. `unicode-bidi: isolate` keeps it from being reordered by any
+   surrounding RTL text. */
 .wordmark {
+  direction: ltr;
+  unicode-bidi: isolate;
   display: inline-flex;
   align-items: center;
-  gap: 0.5em;
   font-family: var(--font-display);
   font-weight: 600;
   line-height: 1;
   letter-spacing: normal;
   text-transform: uppercase;
-}
-
-.wordmark__mark {
-  inline-size: 0.46em;
-  block-size: 0.46em;
-  background: var(--ember-bright);
-  flex: none;
 }
 
 .wordmark__letters {
@@ -89,6 +86,18 @@
   display: inline-block;
 }
 
+/* The point: an ember disc standing in for the O of SHOP. Sized just under
+   cap height so it sits optically level with the flat capitals, and as an
+   empty inline-block its baseline is its bottom edge, so it rests exactly on
+   the baseline of the surrounding letters. */
+.wordmark__point {
+  display: inline-block;
+  inline-size: 0.67em;
+  block-size: 0.67em;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
 /* Compact WhatsApp access for phones. Below 560px the header language
    switcher steps aside, which frees exactly enough room for the conversion
    path to stay one tap away from any scroll position. It is a quiet text
@@ -98,7 +107,7 @@
   align-items: center;
   gap: 0.5em;
   font-family: var(--font-ui);
-  font-size: var(--step--2);
+  font-size: var(--step--3);
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -167,9 +176,88 @@ html[dir='rtl'] .nav__link::after {
   --btn-hover-bg: transparent;
   box-shadow: inset 0 0 0 1px rgba(239, 234, 224, 0.3);
   transition: box-shadow var(--dur-fast) var(--ease-out);
-}
-.header__cta:hover {
+}.header__cta:hover {
   box-shadow: inset 0 0 0 1px rgba(239, 234, 224, 0.75);
+}
+
+/* ---- Compact mobile language control --------------------------------
+   Shown only where the four-way switcher is too wide for the row. One 44px
+   target carrying the current language; the panel opens inward from the
+   control's inline-end edge, so it never runs off-screen in either
+   direction. Logical properties mean RTL mirrors it intentionally. */
+.langc {
+  position: relative;
+  display: none;
+}
+
+.langc__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+  min-block-size: 44px;
+  min-inline-size: 44px;
+  padding-inline: 0.5em;
+  font-family: var(--font-ui);
+  font-size: var(--step--3);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #efeae0;
+  box-shadow: inset 0 0 0 1px rgba(239, 234, 224, 0.24);
+  transition: box-shadow var(--dur-fast) var(--ease-out);
+}
+.langc__button:hover {
+  box-shadow: inset 0 0 0 1px rgba(239, 234, 224, 0.6);
+}
+
+.langc__caret {
+  inline-size: 0.42em;
+  block-size: 0.42em;
+  border-inline-end: 1.5px solid currentColor;
+  border-block-end: 1.5px solid currentColor;
+  transform: translateY(-0.14em) rotate(45deg);
+}
+
+.langc__menu {
+  position: absolute;
+  inset-block-start: calc(100% + 0.6rem);
+  inset-inline-end: 0;
+  z-index: 6;
+  min-inline-size: 10rem;
+  padding: 0.25rem;
+  background: rgba(13, 13, 11, 0.97);
+  box-shadow: inset 0 0 0 1px rgba(239, 234, 224, 0.18);
+}
+
+.langc__option {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  inline-size: 100%;
+  min-block-size: 44px;
+  padding-inline: 0.7rem;
+  font-family: var(--font-ui);
+  font-size: var(--step--1);
+  text-align: start;
+  color: rgba(239, 234, 224, 0.7);
+  transition: color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+.langc__option:hover {
+  color: #efeae0;
+  background: rgba(239, 234, 224, 0.06);
+}
+.langc__option .langc__code {
+  font-size: var(--step--3);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+.langc__option.is-active {
+  color: #efeae0;
+}
+.langc__option.is-active .langc__code {
+  color: var(--ember-bright);
 }
 
 /* language switcher */
@@ -320,6 +408,9 @@ html[dir='rtl'] .header__progress span {
 @media (max-width: 560px) {
   .header .lang {
     display: none;
+  }
+  .langc {
+    display: block;
   }
   .header__wa {
     display: inline-flex;
@@ -562,7 +653,7 @@ html[dir='rtl'] .path:hover .path__arrow {
 @media (max-width: 700px) {
   .hero {
     min-height: auto;
-    padding-block-start: calc(var(--header-h) + 42vh);
+    padding-block-start: calc(var(--header-h) + 30vh);
   }
   .hero__lead,
   .hero__paths {
@@ -1629,6 +1720,16 @@ html[dir='rtl'] .path:hover .path__arrow {
   font-weight: 450;
   letter-spacing: -0.012em;
   color: var(--text);
+}
+
+/* The tagline's full stop, set as the same point used in the wordmark. */
+.footer__point {
+  display: inline-block;
+  inline-size: 0.22em;
+  block-size: 0.22em;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-inline-start: 0.055em;
 }
 
 .footer__brandnote {

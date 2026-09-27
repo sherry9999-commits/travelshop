@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useI18n } from '../i18n/I18nContext.jsx'
 import { whatsappLink } from '../lib/links.js'
+import { fill } from '../lib/text.js'
 import { IMAGES } from '../data/images.js'
 import ImagePlaceholder from './ImagePlaceholder.jsx'
 
@@ -22,8 +23,8 @@ export default function CustomTripSection() {
     // The form is intentionally inert: nothing is stored or submitted.
     // The idea is handed straight to WhatsApp instead.
     const message = value
-      ? `I'm thinking about: ${value}`
-      : 'I have a trip in mind. Can we talk it through?'
+      ? fill(t.messages.customValue, { value })
+      : t.messages.customIdea
     window.open(
       whatsappLink(t.contact.generalPhoneRaw, message),
       '_blank',
@@ -87,6 +88,7 @@ export default function CustomTripSection() {
               focus="50% 50%"
               focusSm="50% 50%"
               image={IMAGES.custom}
+              alt={t.images.custom}
               motionInner
             />
             <span className="custom__media-caption t-meta">{c.caption}</span>

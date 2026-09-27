@@ -1,5 +1,6 @@
 import { useI18n } from '../i18n/I18nContext.jsx'
 import { whatsappLink } from '../lib/links.js'
+import { fill } from '../lib/text.js'
 import { TRIP_IMAGES } from '../data/images.js'
 import ImagePlaceholder from './ImagePlaceholder.jsx'
 import RouteLine from './RouteLine.jsx'
@@ -38,6 +39,7 @@ export default function TripFeature({ trip, flip = false, label }) {
           focusSm="50% 45%"
           note={label}
           image={TRIP_IMAGES[trip.id]}
+          alt={trip.name}
           motionInner
         />
       </div>
@@ -70,7 +72,7 @@ export default function TripFeature({ trip, flip = false, label }) {
           </p>
           <a
             className="link-arrow"
-            href={whatsappLink(t.contact.generalPhoneRaw, `${trip.name}: I would like to know more.`)}
+            href={whatsappLink(t.contact.generalPhoneRaw, fill(t.messages.trip, { name: trip.name }))}
             target="_blank"
             rel="noreferrer"
           >

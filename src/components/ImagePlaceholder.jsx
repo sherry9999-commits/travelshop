@@ -32,6 +32,7 @@ export default function ImagePlaceholder({
   innerRef,
   motionInner = false,
   image,
+  alt,
   priority = false,
   quality = 66,
 }) {
@@ -66,7 +67,7 @@ export default function ImagePlaceholder({
       {...(motionInner ? { 'data-motion-inner': '' } : {})}
     >
       {image ? (
-        <Picture image={image} priority={priority} quality={quality} />
+        <Picture image={image} alt={alt} priority={priority} quality={quality} />
       ) : (
         /* Fallback chrome for a frame with no photography yet. Never rendered
            once an image is supplied, so no placeholder or technical label can

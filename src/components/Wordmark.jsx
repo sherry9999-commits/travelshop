@@ -1,21 +1,25 @@
 /**
  * Wordmark
  * ---------------------------------------------------------------------------
- * The Travelshop wordmark: TRAVELSHOP set in the brand display face with
- * deliberately tuned letter relationships rather than uniform tracking, plus
- * the ember square as a brand mark.
+ * TRAVELSHOP set in the brand display face, with two deliberate decisions:
  *
- * The kerning values below are the design: the classic A/V and L/S pairs close
- * up, the round O opens slightly, and the outer letters keep a little air so
- * the unit reads as a locked mark rather than tracked-out type.
+ * 1. The O of SHOP is the ember point. The brand's line is "Point anywhere",
+ *    so the point lives inside the name rather than floating beside it as a
+ *    detached square. A disc is the same silhouette as an O, so nothing is
+ *    lost in legibility: it reads as an accent, never as a broken glyph.
+ *    No other letter is touched and no second device is introduced.
+ *
+ * 2. The wordmark is pinned to `direction: ltr`. It is a Latin brand name, so
+ *    it must read TRAVELSHOP in every language, including Arabic and Hebrew.
+ *    Without this, flex ordering mirrors the letters in RTL and the name
+ *    renders backwards.
  *
  * Variants are free rather than duplicated: colour is inherited from
- * `currentColor`, so the same component renders light on ink and dark on paper.
- * The ember mark is the only constant. No compact/monogram variant exists
- * because the full wordmark fits the mobile header at 360px, so a second mark
- * would be clutter rather than a need.
+ * `currentColor` and the point uses `var(--accent)`, which resolves to the
+ * brighter ember on ink and the deeper ember on paper. No compact/monogram
+ * variant exists, because the full wordmark fits the mobile header at 360px.
  *
- * This is the typographic basis for the future logo, not the final logo.
+ * This is the typographic basis for the final logo.
  */
 const LETTERS = [
   ['T', 0.014],
@@ -30,10 +34,9 @@ const LETTERS = [
   ['P', 0.008],
 ]
 
-export default function Wordmark({ className = '', mark = true }) {
+export default function Wordmark({ className = '' }) {
   return (
     <span className={`wordmark ${className}`.trim()}>
-      {mark ? <span className="wordmark__mark" aria-hidden="true" /> : null}
       <span className="wordmark__letters">
         {LETTERS.map(([letter, kern], i) => (
           <span
@@ -41,7 +44,11 @@ export default function Wordmark({ className = '', mark = true }) {
             key={`${letter}-${i}`}
             style={{ marginInlineEnd: `${kern}em` }}
           >
-            {letter}
+            {letter === 'O' ? (
+              <span className="wordmark__point" aria-hidden="true" />
+            ) : (
+              letter
+            )}
           </span>
         ))}
       </span>
